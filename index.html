@@ -1,1 +1,19 @@
-<h1>Hello</h1>
+<html>
+  <head>
+    <meta name="google-signin-client_id" content="859332507976-dfitpmr9bafhhmcde784hr2r0lcqa9au.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </head>
+  <body>
+    <center>
+      <h1>Hello!</h1>
+      <h3>Welcome to OurApp. See various sign in options below.</h3>
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    </center>
+  </body>
+  <script>
+    window.onbeforeunload = function(e){
+      gapi.auth2.getAuthInstance().signOut();
+    };
+  </script>
+  <script src="index.js"></script>
+</html>
