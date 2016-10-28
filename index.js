@@ -22,4 +22,27 @@ function signOut() {
   });
 }
 
-//Sign in with
+//Sign in with Zendesk functions
+
+//Function to get Url parameters
+function getParameterByName(parameterName) {
+  var result = null,
+      tmp = [];
+  location.search
+  .substr(1)
+      .split("&")
+      .forEach(function (item) {
+      tmp = item.split("=");
+      if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+  });
+  return result;
+}
+
+//Function to check if access has been granted
+function check(){
+  if(getParameterByName('code') != null){
+    window.location = "http://localhost:9000/welcome-zendesk.html";
+  }else{
+    window.location = "http://localhost:9000/error.html";
+  }
+}
