@@ -6,7 +6,7 @@
 //Sign in with Google functions
 //Function to sign in
 function onSignIn(googleUser) {
-  window.location = "http://localhost:9000/welcome.html";
+  window.location = "http://localhost:9000/views/welcome.html";
   var profile = googleUser.getBasicProfile();
   console.log('ID: ' + profile.getId());
   console.log('Name: ' + profile.getName());
@@ -41,8 +41,8 @@ function getParameterByName(parameterName) {
 //Function to check if access has been granted
 function check(){
   if(getParameterByName('code') != null){
-    window.location = "http://localhost:9000/welcome-zendesk.html";
+    window.location = "http://localhost:9000/views/welcome-zendesk.html";
   }else{
-    window.location = "http://localhost:9000/error.html";
+    window.location = "http://localhost:9000/views/error.html";
   }
 }
